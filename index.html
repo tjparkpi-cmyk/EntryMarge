@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fc">
+  <title>EntryMerge 2.0 Web</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div class="logo">EM</div>
+      <div><p class="eyebrow">ENTRY PROJECT TOOL</p><h1>EntryMerge <span>2.0</span></h1><p class="subtitle">여러 Entry 작품을 하나의 .ent 파일로 병합합니다.</p></div>
+    </header>
+    <section class="panel">
+      <h2>1. 병합 방식 선택</h2>
+      <label class="mode"><input type="radio" name="mode" value="objects" checked><span><b>A. 오브젝트 합치기</b><small>모든 오브젝트를 첫 번째 작품의 첫 장면에 모읍니다.</small></span></label>
+      <label class="mode"><input type="radio" name="mode" value="scenes"><span><b>B. 장면 합치기</b><small>각 작품의 장면과 오브젝트 배치를 유지합니다.</small></span></label>
+    </section>
+    <section class="panel">
+      <div class="section-head"><h2>2. ENT 파일 추가</h2><span id="count">0개 선택</span></div>
+      <label class="drop" id="dropzone"><input id="files" type="file" accept=".ent,application/octet-stream" multiple><span class="upload-icon">↑</span><b>ENT 파일을 선택하거나 여기에 끌어 놓으세요</b><small>두 개 이상의 .ent 파일이 필요합니다.</small><em>파일 선택</em></label>
+      <ul id="file-list" class="file-list"><li class="empty">아직 추가된 파일이 없습니다.</li></ul>
+      <button id="clear" class="button secondary" disabled>목록 비우기</button>
+    </section>
+    <section class="panel result-panel">
+      <h2>3. 병합 및 저장</h2>
+      <p class="privacy">파일은 브라우저 안에서 처리됩니다. 별도 서버로 업로드하지 않습니다.</p>
+      <button id="merge" class="button primary" disabled>병합하고 ENT로 저장</button>
+      <div id="status" class="status" role="status">ENT 파일을 2개 이상 추가해 주세요.</div>
+      <div id="summary" class="summary" hidden></div>
+    </section>
+    <footer>EntryMerge 2.0 Web · GitHub Pages용 브라우저 버전</footer>
+  </main>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
